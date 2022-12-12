@@ -1,20 +1,17 @@
-var operacao = prompt('Operação (+,-,*,/)');
-var num1 = parseFloat(prompt('Num 1'));
-var num2 = parseFloat(prompt('Num 2'));
+var numero = parseInt(prompt('Digite um número:'));
 
-switch (operacao) {
-  case '+':
-    alert(num1 + num2);
-    break;
-  case '-':
-    alert(num1 - num2);
-    break;
-  case '*':
-    alert(num1 * num2);
-    break;
-  case '/':
-    alert(num1 / num2);
-    break;
-  default:
-    alert('Operação inválida');
+if (isNaN(numero)) {
+  alert('Número inválido');
+} else {
+  var pares = 0;
+  var impares = 0;
+  for (var i = 0; i <= numero; i++) {
+    if (i % 2 === 0) {
+      pares += 1;
+    } else {
+      impares += 1;
+    }
+  }
+
+  alert('Existem ' + pares + ' números pares e ' + impares + ' números ímpares');
 }
